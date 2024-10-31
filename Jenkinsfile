@@ -6,12 +6,12 @@ pipeline {
         DOCKER_IMAGE_NAME = 'local-node-app'  // Name for the locally built Docker image
     }
     stages {
-        stage('Build Docker Image') {
-            stage('Test') {
-                steps {
-                    sh 'node --version'
-                }
+        stage('Test') {
+            steps {
+                sh 'node --version'
             }
+        }
+        stage('Build Docker Image') {
             steps {
                 script {
                     // Build the Docker image using the Dockerfile in the project
